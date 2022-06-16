@@ -6,4 +6,6 @@ from .models import Cat
 class CatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cat
-        fields = '__all__'
+        # вместо '__all__', выберем нужные поля 
+        # id не будем пересылать при GET запросе
+        fields = ('name', 'color', 'birth_year')
